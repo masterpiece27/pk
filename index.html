@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>FOUND YOUR GIRL</title>
 
@@ -15,38 +15,38 @@
 }
 
 html,body{
-  background:#060606;
+  background:#050505;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   overflow-x:hidden;
   color:#fff;
 }
 
-/* BACKGROUND EFFECT */
+/* BACKGROUND */
 
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:
-  radial-gradient(circle at top,#ff006633,transparent 35%),
-  radial-gradient(circle at bottom,#0066ff22,transparent 35%);
+  radial-gradient(circle at top,#ff005522,transparent 35%),
+  radial-gradient(circle at bottom,#0055ff22,transparent 35%);
   z-index:-1;
 }
 
-/* MAIN */
+/* PAGE */
 
 .page{
   width:100%;
   max-width:480px;
   margin:auto;
   min-height:100vh;
-  padding-bottom:40px;
+  padding-bottom:50px;
 }
 
 /* HEADER */
 
 .header{
-  padding:18px 18px 12px;
+  padding:18px;
 }
 
 .logo{
@@ -60,8 +60,8 @@ body::before{
 }
 
 .sub{
-  color:#999;
   margin-top:6px;
+  color:#999;
   font-size:13px;
 }
 
@@ -92,8 +92,6 @@ video{
   background:#000;
 }
 
-/* GRADIENT OVERLAY */
-
 .video-box::after{
   content:"";
   position:absolute;
@@ -112,16 +110,15 @@ video{
   top:12px;
   left:12px;
   background:#ff2f6d;
-  color:#fff;
   padding:8px 12px;
   border-radius:50px;
   font-size:12px;
   font-weight:700;
   z-index:5;
-  box-shadow:0 4px 15px rgba(255,47,109,0.45);
+  box-shadow:0 5px 15px rgba(255,0,102,0.4);
 }
 
-/* VIDEO INFO */
+/* INFO */
 
 .video-info{
   padding:16px;
@@ -142,10 +139,11 @@ video{
 
 .stats{
   display:flex;
-  gap:16px;
+  gap:14px;
   margin-top:14px;
-  font-size:13px;
   color:#ccc;
+  font-size:13px;
+  flex-wrap:wrap;
 }
 
 /* BUTTONS */
@@ -159,8 +157,8 @@ video{
 .btn{
   flex:1;
   border:none;
-  border-radius:14px;
-  padding:14px;
+  border-radius:16px;
+  padding:15px;
   font-size:15px;
   font-weight:700;
   cursor:pointer;
@@ -178,11 +176,11 @@ video{
 }
 
 .btn-secondary{
-  background:#1d1d1d;
+  background:#1b1b1b;
   color:#fff;
 }
 
-/* TRENDING */
+/* SECTION */
 
 .section-title{
   padding:18px 16px 10px;
@@ -190,22 +188,22 @@ video{
   font-weight:700;
 }
 
-/* ADS CARD */
+/* ADS */
 
 .ads-card{
   margin:12px;
   background:#121212;
   border-radius:20px;
-  overflow:hidden;
   padding:14px;
   border:1px solid rgba(255,255,255,0.05);
+  overflow:hidden;
 }
 
 .ads-label{
-  color:#888;
-  font-size:12px;
-  margin-bottom:12px;
+  color:#777;
+  font-size:11px;
   text-transform:uppercase;
+  margin-bottom:12px;
   letter-spacing:1px;
 }
 
@@ -213,18 +211,18 @@ video{
 
 .footer{
   text-align:center;
-  padding:30px 15px;
   color:#666;
   font-size:12px;
+  padding:30px 15px;
 }
 
 /* MOBILE */
 
 @media(max-width:480px){
 
-  .video-title{
-    font-size:18px;
-  }
+.video-title{
+  font-size:18px;
+}
 
 }
 
@@ -293,14 +291,16 @@ Watch the latest viral content people are talking about right now.
 <div>🔥 Trending</div>
 </div>
 
+<!-- BUTTONS -->
+
 <div class="actions">
 
-<button class="btn btn-primary">
+<button class="btn btn-primary" id="watchBtn">
 ▶ Watch More
 </button>
 
-<button class="btn btn-secondary">
-⭐ Save
+<button class="btn btn-secondary" id="downloadBtn">
+⬇ Download
 </button>
 
 </div>
@@ -323,7 +323,8 @@ Watch the latest viral content people are talking about right now.
 Sponsored
 </div>
 
-<script async="async" data-cfasync="false"
+<script async="async"
+data-cfasync="false"
 src="https://brewdismaychest.com/aa07e5156e3bde06cc9c46c75653774f/invoke.js">
 </script>
 
@@ -341,11 +342,11 @@ Advertisement
 
 <script>
 atOptions = {
-  'key' : '43d32f3264c4bf7923379562345f0c1f',
-  'format' : 'iframe',
-  'height' : 250,
-  'width' : 300,
-  'params' : {}
+'key' : '43d32f3264c4bf7923379562345f0c1f',
+'format' : 'iframe',
+'height' : 250,
+'width' : 300,
+'params' : {}
 };
 </script>
 
@@ -365,23 +366,51 @@ atOptions = {
 
 (function () {
 
+/* =========================
+   SMARTLINK
+========================= */
+
+const smartlink = "https://brewdismaychest.com/xmj0tup7m?key=ec38fd4a1c9eb79b5968a6db8d42ae05";
+
+/* WATCH MORE */
+
+document.getElementById("watchBtn")
+.addEventListener("click", function () {
+
+window.open(smartlink, "_blank");
+
+});
+
+/* DOWNLOAD */
+
+document.getElementById("downloadBtn")
+.addEventListener("click", function () {
+
+window.open(smartlink, "_blank");
+
+});
+
+/* =========================
+   VIDEO PARAM
+========================= */
+
 const params = new URLSearchParams(window.location.search);
 
 let video = params.get("v");
 
 if (video) {
 
-  if (!video.startsWith("http")) {
-    video = "https://cdn.videy.co/" + video;
-  }
+if (!video.startsWith("http")) {
+video = "https://cdn.videy.co/" + video;
+}
 
-  if (!video.endsWith(".mp4")) {
-    video = "https://cdn.videy.co/k84OOz1w1.mp4";
-  }
+if (!video.endsWith(".mp4")) {
+video = "https://cdn.videy.co/k84OOz1w1.mp4";
+}
 
 } else {
 
-  video = "https://cdn.videy.co/k84OOz1w1.mp4";
+video = "https://cdn.videy.co/k84OOz1w1.mp4";
 
 }
 
@@ -398,21 +427,23 @@ player.play().catch(() => {});
 
 player.addEventListener("contextmenu", e => e.preventDefault());
 
-/* POPUNDER FIRST CLICK */
+/* =========================
+   POPUNDER
+========================= */
 
 player.addEventListener("click", function () {
 
-  if (!window.popShown) {
+if (!window.popShown) {
 
-    window.popShown = true;
+window.popShown = true;
 
-    var s = document.createElement("script");
+var s = document.createElement("script");
 
-    s.src = "https://brewdismaychest.com/d2/7a/b4/d27ab410a890f87de3cd808380b844c8.js";
+s.src = "https://brewdismaychest.com/d2/7a/b4/d27ab410a890f87de3cd808380b844c8.js";
 
-    document.body.appendChild(s);
+document.body.appendChild(s);
 
-  }
+}
 
 });
 
